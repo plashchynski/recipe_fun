@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Recipe Fun — Where Flavorful Recipes Unite!{% endblock %}</title>
+    <link href="{{ url_for('static', path='/css/bootstrap.min.css') }}" rel="stylesheet">
   </head>
   <body>
     {% block content %}
     {% endblock %}
+
+    <script src="{{ url_for('static', path='/js/bootstrap.bundle.min.js') }}"></script>
   </body>
 </html>
