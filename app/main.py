@@ -7,10 +7,6 @@ from .db import init_db
 
 app = FastAPI()
 
-@app.on_event("startup")
-def on_startup():
-    init_db()
-
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 app.include_router(home.router)
