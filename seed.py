@@ -5,6 +5,7 @@ from app.models import Recipe
 
 engine = get_engine()
 
+# Clear recipe table
 with Session(engine) as session:
     session.exec("TRUNCATE recipe")
     session.exec("ALTER SEQUENCE recipe_id_seq RESTART WITH 1")
@@ -45,6 +46,7 @@ recipe_4 = Recipe(
         directions=[]
     )
 
+# Add recipes
 with Session(engine) as session:
     session.add(recipe_1)
     session.add(recipe_2)

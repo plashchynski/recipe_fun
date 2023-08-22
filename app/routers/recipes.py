@@ -1,8 +1,13 @@
 from enum import Enum
 
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, Depends
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+
+from sqlmodel import Session, select
+
+from ..db import get_session
+from ..models import Recipe
 
 class RecipesExploreMode(str, Enum):
     all = "all"
@@ -13,8 +18,9 @@ templates = Jinja2Templates(directory="app/templates")
 router = APIRouter(prefix="/recipes",)
 
 @router.get("/", response_class=HTMLResponse)
-async def recipes(request: Request, search: str = None, explore_mode: RecipesExploreMode = RecipesExploreMode.all):
-    return templates.TemplateResponse("recipes.html", {"request": request})
+async def get_recipes(request: Request, session: Session = Depends(get_session), search: str = None, explore_mode: RecipesExploreMode = RecipesExploreMode.all):
+    recipes = session.exec(select(Recipe)).all()
+    return templates.TemplateResponse("recipes.html", {"request": request, "recipes": recipes})
 
 @router.get("/{recipe_id}", response_class=HTMLResponse)
 async def recipe(request: Request, recipe_id: int):

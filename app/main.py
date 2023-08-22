@@ -3,8 +3,6 @@ from fastapi.staticfiles import StaticFiles
 
 from .routers import home, recipes
 
-from .db import init_db
-
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="app/static"), name="static")

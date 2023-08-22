@@ -6,4 +6,8 @@
 
 <h1>Explore</h1>
 
+{% for recipe in recipes %}
+<h2>{{ recipe.name }}</h2>
+{% endfor %}
+
 {% endblock %}
