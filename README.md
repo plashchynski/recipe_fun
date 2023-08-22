@@ -21,7 +21,7 @@ create database recipe_fun;
 Create database schema and populate it with test data:
 ```bash
 DATABASE_URL="postgresql://postgres@localhost/recipe_fun" alembic upgrade head
-DATABASE_URL="postgresql://postgres@localhost/recipe_fun" python seed.py # Add test data to the database
+DATABASE_URL="postgresql://postgres@localhost/recipe_fun" python seed.py
 ```
 
 Run the web server:
