@@ -4,8 +4,29 @@
     
 ```bash
 python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
-DATABASE_URL="postgresql://postgres@localhost" alembic upgrade head
-DATABASE_URL="postgresql://postgres@localhost" uvicorn app.main:app --reload
+```
+
+Install [PostgreSQL](https://www.postgresql.org/). It's recommended to use [Postgres.app](https://postgresapp.com/) for macOS.
+
+Connect to the database:
+```bash
+psql
+```
+
+Create a new database:
+```sql
+create database recipe_fun;
+```
+
+Create database schema and populate it with test data:
+```bash
+DATABASE_URL="postgresql://postgres@localhost/recipe_fun" alembic upgrade head
+DATABASE_URL="postgresql://postgres@localhost/recipe_fun" python seed.py # Add test data to the database
+```
+
+Run the web server:
+```bash
+DATABASE_URL="postgresql://postgres@localhost/recipe_fun" uvicorn app.main:app --reload
 ```
 
 ## Generate a new migration
