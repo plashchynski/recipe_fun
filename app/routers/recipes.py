@@ -15,9 +15,10 @@ class RecipesExploreMode(str, Enum):
 
 templates = Jinja2Templates(directory="app/templates")
 
-router = APIRouter(prefix="/recipes",)
+router = APIRouter()
 
 @router.get("/", response_class=HTMLResponse)
+@router.get("/recipes", response_class=HTMLResponse)
 async def list_recipes(request: Request, session: Session = Depends(get_session), search: str = None, explore_mode: RecipesExploreMode = RecipesExploreMode.all):
     recipes = session.exec(select(Recipe)).all()
     return templates.TemplateResponse("recipes.html", {
@@ -26,7 +27,7 @@ async def list_recipes(request: Request, session: Session = Depends(get_session)
             "explore_mode": explore_mode.name
         })
 
-@router.get("/{recipe_id}", response_class=HTMLResponse)
+@router.get("/recipes/{recipe_id}", response_class=HTMLResponse)
 async def show_recipe(request: Request, recipe_id: int, session: Session = Depends(get_session)):
     statement = select(Recipe).where(Recipe.id == recipe_id)
     recipe = session.exec(statement).first()
