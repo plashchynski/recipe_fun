@@ -20,7 +20,12 @@ router = APIRouter(prefix="/recipes",)
 @router.get("/", response_class=HTMLResponse)
 async def get_recipes(request: Request, session: Session = Depends(get_session), search: str = None, explore_mode: RecipesExploreMode = RecipesExploreMode.all):
     recipes = session.exec(select(Recipe)).all()
-    return templates.TemplateResponse("recipes.html", {"request": request, "recipes": recipes})
+    print(explore_mode.name)
+    return templates.TemplateResponse("recipes.html", {
+            "request": request,
+            "recipes": recipes,
+            "explore_mode": explore_mode.name
+        })
 
 @router.get("/{recipe_id}", response_class=HTMLResponse)
 async def recipe(request: Request, recipe_id: int):
