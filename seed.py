@@ -5,6 +5,11 @@ from app.models import Recipe
 
 engine = get_engine()
 
+with Session(engine) as session:
+    session.exec("TRUNCATE recipe")
+    session.exec("ALTER SEQUENCE recipe_id_seq RESTART WITH 1")
+    session.commit()
+
 recipe_1 = Recipe(
         name="Humus",
         description="Hummus, also spelled hommus or houmous, is a dip of Arab origin, spread, or savory dish made from cooked, mashed chickpeas blended with tahini, lemon juice, and garlic. The standard garnish in the Middle East includes olive oil, a few whole chickpeas, parsley, and paprika.",
