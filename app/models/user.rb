@@ -8,4 +8,12 @@ class User < ApplicationRecord
 
   # All recipes become anonymous
   has_many :recipes, dependent: :nullify
+
+  has_one_attached :avatar
+
+  # A way to remove the avatar is to set remove_avatar to 1
+  attribute :remove_avatar, :string
+  after_update do
+    avatar.purge if remove_avatar == "1"
+  end
 end
