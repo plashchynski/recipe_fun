@@ -9,5 +9,7 @@ COPY . .
 
 ENV RAILS_ENV=production
 
+RUN rails assets:precompile
+
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
