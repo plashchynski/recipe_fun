@@ -3,7 +3,7 @@ runtime: ruby31
 build:
   commands:
     pre-build:
-      - yum install postgresql15
+      - amazon-linux-extras install postgresql15
     build:
       - bundle install
   env:
