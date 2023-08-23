@@ -51,7 +51,8 @@ gem "bootsnap", require: false
 # Required by bootstrap
 # gem 'dartsass-sprockets'
 
-gem 'bootstrap', '~> 5.3.1'
+gem "bootstrap", "~> 5.3.1"
+gem "font-awesome-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
