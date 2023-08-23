@@ -1,0 +1,16 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "logo.png", size: "24x24", alt: "Logo", class: "d-inline-block align-text-top" %>
+        Recipe Fun
+    <% end %>
+
+    <% if user_signed_in? %>
+    <% else %>
+        
+        <%= link_to new_user_session_path, class: "navbar-brand" do %>
+        <%= fa_icon "user" %>
+        <% end %>
+    <% end %>
+    </div>
+</nav>
