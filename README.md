@@ -1,43 +1,24 @@
-# recipe_fun
+# README
 
-## Run the app
-    
-```bash
-python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
-```
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Install [PostgreSQL](https://www.postgresql.org/). It's recommended to use [Postgres.app](https://postgresapp.com/) for macOS.
+Things you may want to cover:
 
-Connect to the database:
-```bash
-psql
-```
+* Ruby version
 
-Create a new database:
-```sql
-create database recipe_fun;
-```
+* System dependencies
 
-Create database schema and populate it with test data:
-```bash
-DATABASE_URL="postgresql://postgres@localhost/recipe_fun" alembic upgrade head
-DATABASE_URL="postgresql://postgres@localhost/recipe_fun" python seed.py
-```
+* Configuration
 
-Run the web server:
-```bash
-DATABASE_URL="postgresql://postgres@localhost/recipe_fun" uvicorn app.main:app --reload
-```
+* Database creation
 
-## Generate a new migration
+* Database initialization
 
-```bash
-DATABASE_URL="postgresql://postgres@localhost/recipe_fun" alembic revision --autogenerate -m "comment"
-DATABASE_URL="postgresql://postgres@localhost/recipe_fun" alembic upgrade head
-```
+* How to run the test suite
 
+* Services (job queues, cache servers, search engines, etc.)
 
-## References
+* Deployment instructions
 
-- [FastAPI](https://fastapi.tiangolo.com/)
-- [Bootstrap](https://getbootstrap.com/)
+* ...
