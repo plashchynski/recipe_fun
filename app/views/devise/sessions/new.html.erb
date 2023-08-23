@@ -6,6 +6,10 @@
   <div class="position-absolute top-50 start-50 translate-middle">
     <h2 class="mb-4">Log in</h2>
 
+    <%= render partial: "layouts/flash_messages" %>
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field mb-3">
         <%= f.label :email, class: 'form-label' %><br />
