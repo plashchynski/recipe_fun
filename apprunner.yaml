@@ -1,0 +1,14 @@
+version: 1.0
+runtime: ruby31
+build:
+  commands:
+    build:
+      - bundle install
+  env:
+    - name: RAILS_ENV
+      value: "production"
+run:
+  command: bundle exec rackup --host 0.0.0.0 -p 8000
+  env:
+    - name: RAILS_ENV
+      value: "production"
