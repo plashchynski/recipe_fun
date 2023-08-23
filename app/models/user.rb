@@ -5,5 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :first_name, :last_name, presence: true
-  has_many :recipes
+
+  # All recipes become anonymous
+  has_many :recipes, dependent: :nullify
 end
