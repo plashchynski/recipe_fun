@@ -4,7 +4,7 @@
 
 ```bash
 RAILS_ENV=test rake db:migrate
-rake
+rspec
 ```
 
 ## Deploy
