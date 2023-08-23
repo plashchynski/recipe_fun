@@ -32,8 +32,8 @@ DATABASE_URL="postgresql://postgres@localhost/recipe_fun" uvicorn app.main:app -
 ## Generate a new migration
 
 ```bash
-DATABASE_URL="postgresql://postgres@localhost" alembic revision --autogenerate -m "comment"
-DATABASE_URL="postgresql://postgres@localhost" alembic upgrade head
+DATABASE_URL="postgresql://postgres@localhost/recipe_fun" alembic revision --autogenerate -m "comment"
+DATABASE_URL="postgresql://postgres@localhost/recipe_fun" alembic upgrade head
 ```
 
 
