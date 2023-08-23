@@ -3,7 +3,7 @@ runtime: ruby31
 build:
   commands:
     pre-build:
-      - yum install libpq
+      - yum install postgresql-devel
     build:
       - bundle install
   env:
