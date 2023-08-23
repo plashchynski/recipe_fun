@@ -3,7 +3,7 @@ runtime: ruby31
 build:
   commands:
     pre-build:
-      - yum install postgresql-devel
+      - yum install postgresql93-devel
     build:
       - bundle install
   env:
