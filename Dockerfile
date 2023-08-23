@@ -1,6 +1,6 @@
 FROM ruby:latest
 
-RUN apt-get update -qq && apt-get install -y build-essential apt-utils libpq-dev nodejs
+RUN apt-get update -qq && apt-get install -y build-essential apt-utils libpq-dev nodejs libvips42
 
 WORKDIR /usr/src/app
 COPY Gemfile* ./
