@@ -7,9 +7,11 @@
 
         <ul class="navbar-nav">
             <% if current_page?(controller: '/recipes', action: 'index') %>
-                <li class="nav-item">
-                    <%= link_to "Add Recipe", new_recipe_path, class: "nav-link" %>
-                </li>
+                <% if user_signed_in? %>
+                    <li class="nav-item">
+                        <%= link_to "Add Recipe", new_recipe_path, class: "nav-link" %>
+                    </li>
+                <% end %>
             <% else %>
                 <li class="nav-item">
                     <%= link_to "Explore", recipes_path, class: "nav-link" %>

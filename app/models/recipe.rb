@@ -5,4 +5,10 @@ class Recipe < ApplicationRecord
   belongs_to :user, optional: true
 
   has_one_attached :image
+
+  # A way to remove the image is to set remove_image to 1
+  attribute :remove_image, :string
+  after_update do
+    image.purge if remove_image == "1"
+  end
 end

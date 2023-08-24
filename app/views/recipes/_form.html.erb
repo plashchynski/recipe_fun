@@ -1,7 +1,9 @@
 <%= form_with(model: recipe) do |form| %>
   <% if recipe.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+    <div class="alert alert-warning" role="alert" data-turbo-cache="false">
+      <h4 class="alert-heading">
+        <%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:
+      </h4>
 
       <ul>
         <% recipe.errors.each do |error| %>
@@ -11,17 +13,33 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="field mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="field mb-3">
+    <%= form.label :description, class: 'form-label' %>
+    <%= form.text_area :description, class: 'form-control' %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="field mb-3">
+    <%= form.label :image, class: 'form-label' %><br />
+    <%= form.file_field :image, class: 'form-control' %>
+  </div>
+
+  <% if form.object.image.attached? %>
+    <div class="field mb-3 form-check">
+      <%= image_tag form.object.image, height: 100 %>
+    </div>
+
+    <div class="field mb-3 form-check">
+      <%= f.check_box :remove_image, class: "form-check-input" %>
+      <%= f.label :remove_image, class: "form-check-label" %>
+    </div>
+  <% end %>
+
+  <div class="actions mb-3">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
