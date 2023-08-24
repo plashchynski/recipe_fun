@@ -4,6 +4,8 @@ class Recipe < ApplicationRecord
   # Considered to be anonymous if not present
   belongs_to :author, class_name: "User"
 
+  scope :published, -> { where(published: true) }
+
   has_one_attached :image
 
   # A way to remove the image is to set remove_image to 1
