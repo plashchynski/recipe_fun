@@ -10,6 +10,7 @@
 
 <p><%= @recipe.description %></p>
 
+<p><%= @recipe.directions %></p>
 
 <% if @recipe.author == current_user %>
   <%= link_to "Edit", edit_recipe_path(@recipe) %>

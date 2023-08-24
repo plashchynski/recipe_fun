@@ -8,6 +8,8 @@ class Recipe < ApplicationRecord
 
   has_one_attached :image
 
+  has_rich_text :directions
+
   # A way to remove the image is to set remove_image to 1
   attribute :remove_image, :string
   after_update do
