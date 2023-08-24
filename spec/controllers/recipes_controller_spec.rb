@@ -17,6 +17,12 @@ RSpec.describe RecipesController do
       get :index
       expect(response.body).to include(recipe.title)
     end
+
+    it "should not display not published recipes" do
+      secret_salad = recipes(:secret_salad)
+      get :index
+      expect(response.body).not_to include(secret_salad.title)
+    end
   end
 
   describe "GET new" do
