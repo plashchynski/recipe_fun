@@ -8,7 +8,7 @@ RSpec.describe Recipe, type: :model do
   end
 
   describe 'associations' do
-    it { should belong_to(:author).class_name("User").optional }
+    it { should belong_to(:author).class_name("User") }
   end
 
   describe 'attachments' do
