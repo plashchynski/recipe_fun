@@ -39,6 +39,11 @@
     </div>
   <% end %>
 
+  <div class="field mb-3 form-check">
+    <%= form.check_box :published, class: 'form-check-input' %>
+    <%= form.label :published, class: 'form-check-label' %>
+  </div>
+
   <div class="actions mb-3">
     <%= form.submit class: "btn btn-primary" %>
   </div>
