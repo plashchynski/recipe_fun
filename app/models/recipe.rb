@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  validates :name, presence: true
+  validates :title, presence: true
 
   # Considered to be anonymous if not present
   belongs_to :user, optional: true
