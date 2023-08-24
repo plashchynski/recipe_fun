@@ -4,11 +4,19 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
+    @mode = params[:mode] || "all"
+
+    if @mode == "all"
+      @recipes = Recipe.all
+    elsif @mode == "my"
+      @recipes = Recipe.where(author_id: current_user.id)
+    end
+
     if user_signed_in?
       # Show all recipes to the author
-      @recipes = Recipe.where("published IS TRUE OR author_id = ?", current_user.id).order(created_at: :desc)
+      @recipes = @recipes.where("published IS TRUE OR author_id = ?", current_user.id).order(created_at: :desc)
     else
-      @recipes = Recipe.published.order(created_at: :desc)
+      @recipes = @recipes.published.order(created_at: :desc)
     end
   end
 

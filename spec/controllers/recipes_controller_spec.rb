@@ -23,6 +23,26 @@ RSpec.describe RecipesController do
       get :index
       expect(response.body).not_to include(secret_salad.title)
     end
+  
+    context "when mode is my" do
+      it "should display only recipes of the current user" do
+        salad = recipes(:salad)
+        sign_in user
+        get :index, params: { mode: "my" }
+        expect(response.body).to include(recipe.title)
+        expect(response.body).not_to include(salad.title)
+      end
+    end
+
+    context "when mode is all" do
+      it "should display all recipes of all users" do
+        salad = recipes(:salad)
+        sign_in user
+        get :index, params: { mode: "all" }
+        expect(response.body).to include(recipe.title)
+        expect(response.body).to include(salad.title)
+      end
+    end
   end
 
   describe "GET new" do
