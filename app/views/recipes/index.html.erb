@@ -6,10 +6,12 @@
 
 <h1>Explore</h1>
 
-<div class="btn-group" role="group">
-  <%= link_to "All", recipes_path(mode: 'all'), class: "btn #{@mode == 'all' ? "btn-primary" : "btn-outline-primary"}" %>
-  <%= link_to "My", recipes_path(mode: 'my'), class: "btn #{@mode == 'my' ? "btn-primary" : "btn-outline-primary"}" %>
-</div>
+<% if user_signed_in? %>
+  <div class="btn-group" role="group">
+    <%= link_to "All", recipes_path(mode: 'all'), class: "btn #{@mode == 'all' ? "btn-primary" : "btn-outline-primary"}" %>
+    <%= link_to "My", recipes_path(mode: 'my'), class: "btn #{@mode == 'my' ? "btn-primary" : "btn-outline-primary"}" %>
+  </div>
+<% end %>
 
 <div id="recipes">
   <%= render @recipes %>
