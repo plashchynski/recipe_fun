@@ -4,7 +4,12 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = Recipe.published
+    if user_signed_in?
+      # Show all recipes to the author
+      @recipes = Recipe.where("published IS TRUE OR author_id = ?", current_user.id).order(created_at: :desc)
+    else
+      @recipes = Recipe.published.order(created_at: :desc)
+    end
   end
 
   # GET /recipes/1 or /recipes/1.json
