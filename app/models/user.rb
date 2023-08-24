@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
 
   # All recipes become anonymous
-  has_many :recipes, dependent: :nullify
+  has_many :recipes, foreign_key: :author_id, dependent: :nullify
 
   has_one_attached :avatar
 
