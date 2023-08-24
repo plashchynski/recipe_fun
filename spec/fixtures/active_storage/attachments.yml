@@ -1,0 +1,24 @@
+humus_thumbnail_attachment:
+  name: image
+  record: humus (Recipe)
+  blob: humus_thumbnail_blob
+
+chicken_thumbnail_attachment:
+  name: image
+  record: chicken (Recipe)
+  blob: chicken_thumbnail_blob
+
+ragu_thumbnail_attachment:
+  name: image
+  record: ragu (Recipe)
+  blob: ragu_thumbnail_blob
+
+minestrone_thumbnail_attachment:
+  name: image
+  record: minestrone (Recipe)
+  blob: minestrone_thumbnail_blob
+
+salad_thumbnail_attachment:
+  name: image
+  record: salad (Recipe)
+  blob: salad_thumbnail_blob

@@ -1,0 +1,5 @@
+humus_thumbnail_blob: <%= ActiveStorage::FixtureSet.blob filename: "humus.png" %>
+chicken_thumbnail_blob: <%= ActiveStorage::FixtureSet.blob filename: "chicken.png" %>
+ragu_thumbnail_blob: <%= ActiveStorage::FixtureSet.blob filename: "ragu.png" %>
+minestrone_thumbnail_blob: <%= ActiveStorage::FixtureSet.blob filename: "minestrone.png" %>
+salad_thumbnail_blob: <%= ActiveStorage::FixtureSet.blob filename: "salad.png" %>
