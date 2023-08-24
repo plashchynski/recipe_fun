@@ -80,6 +80,7 @@ group :test do
   gem "webdrivers"
   gem "rspec-rails"
   gem "shoulda-matchers", "~> 5.0"
+  gem "rails-controller-testing"
 end
 
 gem "devise", "~> 4.9"
