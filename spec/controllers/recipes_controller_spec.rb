@@ -21,6 +21,7 @@ RSpec.describe RecipesController do
 
   describe "GET new" do
     it "should render the new template" do
+      sign_in user
       get :new
       expect(response).to render_template("new")
     end
@@ -52,6 +53,35 @@ RSpec.describe RecipesController do
       sign_in user
       get :show, params: { id: recipe.id }
       expect(response.body).to include("Delete")
+    end
+  end
+
+  describe "POST create" do
+    let(:recipe_params) do
+      {
+        title: "Test Recipe",
+        description: "Test Description",
+      }
+    end
+
+    it "should not create a new recipe if user not signed in" do
+      expect do
+        post :create, params: { recipe: recipe_params }
+      end.not_to change(Recipe, :count)
+      expect(response).to be_redirect
+    end
+
+    it "should create a new recipe if user signed in" do
+      sign_in user
+      expect do
+        post :create, params: { recipe: recipe_params }
+      end.to change(Recipe, :count)
+      expect(response).to be_redirect
+
+      created_recipe = Recipe.last
+      expect(created_recipe.title).to eq(recipe_params[:title])
+      expect(created_recipe.description).to eq(recipe_params[:description])
+      expect(created_recipe.author).to eq(user)
     end
   end
 end
