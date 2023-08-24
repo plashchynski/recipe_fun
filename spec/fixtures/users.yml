@@ -2,3 +2,8 @@ john:
   first_name: John
   last_name: Doe
   email: john@example.com
+
+bob:
+  first_name: Bob
+  last_name: Doe
+  email: bob@example.com

@@ -18,9 +18,9 @@ ragu:
 minestrone:
   title: "Minestrone"
   description: "Thick soup of Italian origin made with vegetables"
-  author: john
+  author: bob
 
 salad:
   title: "Greek salad"
   description: "A popular salad in Greek cuisine generally made of tomatoes"
-  author: john
+  author: bob
