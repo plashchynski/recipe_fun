@@ -11,4 +11,8 @@ RSpec.describe User, type: :model do
   describe 'associations' do
     it { should have_many(:recipes) }
   end
+
+  describe 'attachments' do
+    it { should have_one_attached(:avatar) }
+  end
 end

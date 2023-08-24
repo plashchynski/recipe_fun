@@ -8,6 +8,10 @@ RSpec.describe Recipe, type: :model do
   end
 
   describe 'associations' do
-    it { should belong_to(:user) }
+    it { should belong_to(:user).optional }
+  end
+
+  describe 'attachments' do
+    it { should have_one_attached(:image) }
   end
 end
