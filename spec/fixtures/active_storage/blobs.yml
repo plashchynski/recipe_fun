@@ -1,3 +1,5 @@
+# These files were taken from Wikipedia
+
 humus_thumbnail_blob: <%= ActiveStorage::FixtureSet.blob filename: "humus.png" %>
 chicken_thumbnail_blob: <%= ActiveStorage::FixtureSet.blob filename: "chicken.png" %>
 ragu_thumbnail_blob: <%= ActiveStorage::FixtureSet.blob filename: "ragu.png" %>
