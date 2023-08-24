@@ -11,6 +11,8 @@
 <p><%= @recipe.description %></p>
 
 
-<%= link_to "Edit", edit_recipe_path(@recipe) %>
+<% if @recipe.user == current_user %>
+  <%= link_to "Edit", edit_recipe_path(@recipe) %>
 
-<%= button_to "Delete", @recipe, method: :delete, class: "btn btn-danger" %>
+  <%= button_to "Delete", @recipe, method: :delete, class: "btn btn-danger" %>
+<% end %>
