@@ -1,12 +1,20 @@
-<div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Name:</strong>
-    <%= recipe.name %>
-  </p>
+<div id="<%= dom_id recipe %>" class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <% if recipe.image.attached? %>
+        <%= image_tag recipe.image, class: "img-fluid rounded-start img-thumbnail", alt: recipe.name %>
+      <% end %>
+    </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= recipe.description %>
-  </p>
-
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= link_to recipe.name, recipe %>
+        </h5>
+        <p class="card-text">
+          <%= recipe.description %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
