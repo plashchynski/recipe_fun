@@ -1,9 +1,16 @@
 # README
 
+## Prerequisite
+
+- [Ruby 3](https://www.ruby-lang.org/en/)
+- [Ruby on Rails 7](https://rubyonrails.org/)
+- [Postgres 15](https://postgresapp.com/)
+
 ## Run tests
 
 ```bash
-RAILS_ENV=test rake db:migrate
+rails db:create
+RAILS_ENV=test rails db:migrate
 rspec
 ```
 
