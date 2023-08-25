@@ -23,6 +23,12 @@ docker tag recipe_fun:latest 225483135113.dkr.ecr.us-west-2.amazonaws.com/recipe
 docker push 225483135113.dkr.ecr.us-west-2.amazonaws.com/recipe_fun:latest
 ```
 
+Populate database with sample data:
+
+```bash
+DATABASE_URL="..." RAILS_ENV=production rake db:seed
+```
+
 ## References
 
 ### Used programming languages and frameworks
