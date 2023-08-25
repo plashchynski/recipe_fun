@@ -16,3 +16,5 @@
 <div id="recipes">
   <%= render @recipes %>
 </div>
+
+<%= will_paginate @recipes, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

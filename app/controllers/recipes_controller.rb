@@ -6,10 +6,10 @@ class RecipesController < ApplicationController
   def index
     @mode = params[:mode] || "all"
 
-    if @mode == "all"
-      @recipes = Recipe.all
-    elsif @mode == "my"
-      @recipes = Recipe.where(author_id: current_user.id)
+    @recipes = Recipe.paginate(page: params[:page], per_page: 10)
+
+    if @mode == "my" && user_signed_in?
+      @recipes = @recipes.where(author_id: current_user.id)
     end
 
     if user_signed_in?
