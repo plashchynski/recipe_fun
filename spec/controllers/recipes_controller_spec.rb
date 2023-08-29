@@ -43,6 +43,15 @@ RSpec.describe RecipesController do
         expect(response.body).to include(salad.title)
       end
     end
+
+    context "search" do
+      it "should search using a term" do
+        salad = recipes(:salad)
+        get :index, params: { search: "hummus" }
+        expect(response.body).to include(recipe.title)
+        expect(response.body).not_to include(salad.title)
+      end
+    end
   end
 
   describe "GET new" do

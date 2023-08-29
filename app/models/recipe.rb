@@ -15,4 +15,10 @@ class Recipe < ApplicationRecord
   after_update do
     image.purge if remove_image == "1"
   end
+
+  # Full text search
+  include PgSearch::Model
+  pg_search_scope :search,
+        against: %i[title description],
+        using: { tsearch: { dictionary: 'english' } }
 end

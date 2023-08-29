@@ -62,6 +62,10 @@ gem 'will_paginate', '~> 4.0'
 
 gem 'will_paginate-bootstrap-style'
 
+# Full text search for Postgres
+# More information: https://pganalyze.com/blog/full-text-search-ruby-rails-postgres
+gem 'pg_search'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

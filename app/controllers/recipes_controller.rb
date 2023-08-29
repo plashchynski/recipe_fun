@@ -8,6 +8,10 @@ class RecipesController < ApplicationController
 
     @recipes = Recipe.paginate(page: params[:page], per_page: 10)
 
+    if params[:search].present?
+      @recipes = @recipes.search(params[:search])
+    end
+
     if @mode == "my" && user_signed_in?
       @recipes = @recipes.where(author_id: current_user.id)
     end
