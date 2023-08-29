@@ -36,6 +36,7 @@ DATABASE_URL="..." RAILS_ENV=production rake db:seed
 - [Ruby 3](https://www.ruby-lang.org/)
 - [Ruby on Rails 7](https://rubyonrails.org/)
 - [PostgreSQL 15](https://www.postgresql.org/)
+- [ActiveAdmin](https://activeadmin.info/)
 - [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)

@@ -27,4 +27,4 @@
   <%= render @recipes %>
 </div>
 
-<%= will_paginate @recipes, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+<%= paginate @recipes, theme: 'bootstrap-5' %>

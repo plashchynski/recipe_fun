@@ -51,20 +51,28 @@ gem "image_processing", "~> 1.2"
 # Required by bootstrap
 # gem 'dartsass-sprockets'
 
+# Bootstrap CSS framework
 gem "bootstrap", "~> 5.3.1"
+
+# Font Awesome icons
 gem "font-awesome-rails"
 
 # Required by Active Storage
 gem "aws-sdk-s3", require: false
 
 # Pagination
-gem 'will_paginate', '~> 4.0'
+gem 'kaminari'
+gem 'bootstrap5-kaminari-views'
 
-gem 'will_paginate-bootstrap-style'
+# Admin panel
+gem 'activeadmin'
 
 # Full text search for Postgres
 # More information: https://pganalyze.com/blog/full-text-search-ruby-rails-postgres
 gem 'pg_search'
+
+# User authentication and authorization
+gem "devise", "~> 4.9"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -91,5 +99,3 @@ group :test do
   gem "shoulda-matchers", "~> 5.0"
   gem "rails-controller-testing"
 end
-
-gem "devise", "~> 4.9"

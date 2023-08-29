@@ -51,3 +51,5 @@ if Rails.env.production?
     recipe.save!
   end
 end
+
+AdminUser.create!(email: 'admin@example.com', password: '0ebn05mR%D', password_confirmation: '0ebn05mR%D')
