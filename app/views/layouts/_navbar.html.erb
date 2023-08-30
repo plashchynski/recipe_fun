@@ -6,7 +6,7 @@
         <% end %>
 
         <ul class="navbar-nav">
-            <% if current_page?(controller: '/recipes', action: 'index') %>
+            <% if current_page?(controller: '/recipes', action: 'index') || current_page?(root_url) %>
                 <% if user_signed_in? %>
                     <li class="nav-item">
                         <%= link_to "Add Recipe", new_recipe_path, class: "nav-link" %>
