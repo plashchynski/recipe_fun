@@ -22,6 +22,7 @@
 
 // change the default background color of the navbar
 $body-tertiary-bg: #F3EB91;
+$font-family-sans-serif: "NunitoSans";
 
 @import "bootstrap/variables";
 @import "bootstrap/variables-dark";
@@ -85,9 +86,14 @@ $body-tertiary-bg: #F3EB91;
 // Use NunitoSans font for navbar-brand
 .navbar-brand {
     font-family: "NunitoSans";
-    font-weight: 800;
+    font-weight: 900;
 }
 
 .navbar .new_recipe,.list_recipes {
     font-size: 1.5em;
+}
+
+// Switcher
+.recipes_mode_switcher {
+    font-family: "NunitoSans";
 }

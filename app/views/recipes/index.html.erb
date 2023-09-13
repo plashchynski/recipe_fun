@@ -4,12 +4,10 @@
 
 <%= render partial: "layouts/flash_messages" %>
 
-<h1>Explore</h1>
-
 <% if user_signed_in? %>
-  <div class="btn-group" role="group">
-    <%= link_to "All", recipes_path(mode: 'all'), class: "btn #{@mode == 'all' ? "btn-primary" : "btn-outline-primary"}" %>
-    <%= link_to "My", recipes_path(mode: 'my'), class: "btn #{@mode == 'my' ? "btn-primary" : "btn-outline-primary"}" %>
+  <div class="btn-group recipes_mode_switcher" role="group">
+    <%= link_to "Explore", recipes_path(mode: 'all'), class: "btn #{@mode == 'all' ? "btn-primary" : "btn-outline-primary"}" %>
+    <%= link_to "My Recipes", recipes_path(mode: 'my'), class: "btn #{@mode == 'my' ? "btn-primary" : "btn-outline-primary"}" %>
   </div>
 <% end %>
 

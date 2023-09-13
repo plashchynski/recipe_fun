@@ -1,9 +1,123 @@
 // This file is designed for custom font declarations
 
+// ExtraLight
 @font-face {
     font-family: "NunitoSans";
-    font-style: black;
+    font-weight: 200;
+    font-style: normal;
+    src: font-url("NunitoSans_10pt-ExtraLight.ttf");
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 200;
+    font-style: italic;
+    src: font-url("NunitoSans_10pt-ExtraLightItalic.ttf");
+}
+
+
+// Light
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 300;
+    font-style: normal;
+    src: font-url("NunitoSans_10pt-Light.ttf");
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 300;
+    font-style: italic;
+    src: font-url("NunitoSans_10pt-LightItalic.ttf");
+}
+
+
+// Regular
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 400;
+    font-style: normal;
+    src: font-url("NunitoSans_10pt-Regular.ttf");
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 400;
+    font-style: italic;
+    src: font-url("NunitoSans_10pt-Italic.ttf");
+}
+
+// Medium
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 500;
+    font-style: normal;
+    src: font-url("NunitoSans_10pt-Medium.ttf");
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 500;
+    font-style: italic;
+    src: font-url("NunitoSans_10pt-MediumItalic.ttf");
+}
+
+// SemiBold
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 600;
+    font-style: normal;
+    src: font-url("NunitoSans_10pt-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 600;
+    font-style: italic;
+    src: font-url("NunitoSans_10pt-SemiBoldItalic.ttf");
+}
+
+// Bold
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 700;
+    font-style: normal;
+    src: font-url("NunitoSans_10pt-Bold.ttf");
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 700;
+    font-style: italic;
+    src: font-url("NunitoSans_10pt-BoldItalic.ttf");
+}
+
+// ExtraBold
+@font-face {
+    font-family: "NunitoSans";
     font-weight: 800;
-    font-display: block;
+    font-style: normal;
+    src: font-url("NunitoSans_10pt-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 800;
+    font-style: italic;
+    src: font-url("NunitoSans_10pt-ExtraBoldItalic.ttf");
+}
+
+// Black
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 900;
+    font-style: normal;
     src: font-url("NunitoSans_10pt-Black.ttf");
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    font-weight: 900;
+    font-style: italic;
+    src: font-url("NunitoSans_10pt-BlackItalic.ttf");
 }
