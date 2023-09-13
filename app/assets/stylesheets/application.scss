@@ -21,8 +21,13 @@
 // any default variable overrides here
 
 // change the default background color of the navbar
+// Colors
+$link-color: black;
+$link-decoration: none;
+
 $body-tertiary-bg: #F3EB91;
 $font-family-sans-serif: "NunitoSans";
+$btn-font-weight: 700;
 
 @import "bootstrap/variables";
 @import "bootstrap/variables-dark";
@@ -93,7 +98,42 @@ $font-family-sans-serif: "NunitoSans";
     font-size: 1.5em;
 }
 
-// Switcher
-.recipes_mode_switcher {
-    font-family: "NunitoSans";
+
+
+// Update style for primary buttons
+@mixin primary-button {
+    background-color: #F6F649;
+    color: black;
+    border-color: #D9D9D9;
+}
+
+@mixin primary-button-hover {
+    background-color: #F3EB91;
+    color: black;
+    border-color: #D9D9D9;
+}
+
+.btn-primary {
+    @include primary-button;
+}
+
+.btn-primary:hover {
+    @include primary-button-hover;
+}
+
+// Switcher for recipes list
+.recipes_mode_switcher .btn {
+    font-weight: bold;
+    border-color: #D9D9D9;
+    color: #AAAAAA;
+    background-color: #EDEDED;
+}
+
+// Switcher for recipes list and a primary button
+.recipes_mode_switcher .btn-primary {
+    @include primary-button;
+}
+
+.recipes_mode_switcher .btn-primary:hover {
+    @include primary-button-hover;
 }
