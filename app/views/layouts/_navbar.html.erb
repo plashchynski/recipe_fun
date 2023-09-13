@@ -1,7 +1,7 @@
 <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-        <%= link_to root_path, class: "navbar-brand" do %>
-            <%= image_tag "logo.png", size: "24x24", alt: "Logo", class: "d-inline-block align-text-top" %>
+        <%= link_to root_path, class: "navbar-brand", title: "Return to the home page" do %>
+            <%= image_tag "navbar_brand_logo.png", size: "24x24", alt: "Logo", class: "d-inline-block align-text-top" %>
             Recipe Fun
         <% end %>
 
@@ -9,12 +9,16 @@
             <% if current_page?(controller: '/recipes', action: 'index') || current_page?(root_url) %>
                 <% if user_signed_in? %>
                     <li class="nav-item">
-                        <%= link_to "Add Recipe", new_recipe_path, class: "nav-link" %>
+                        <%= link_to new_recipe_path, class: "nav-link new_recipe", title: "Add a new recipe" do %>
+                            <%= fa_icon "plus" %>
+                        <% end %>
                     </li>
                 <% end %>
             <% else %>
                 <li class="nav-item">
-                    <%= link_to "Explore", recipes_path, class: "nav-link" %>
+                    <%= link_to recipes_path, class: "nav-link list_recipes", title: "Explore recipes" do %>
+                        <%= fa_icon "list" %>
+                    <% end %>
                 </li>
             <% end %>
         </ul>
