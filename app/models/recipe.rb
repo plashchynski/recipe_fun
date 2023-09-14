@@ -21,6 +21,4 @@ class Recipe < ApplicationRecord
   pg_search_scope :search,
         against: %i[title description],
         using: { tsearch: { dictionary: 'english' } }
-
-  paginates_per 3
 end

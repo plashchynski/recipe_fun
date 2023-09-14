@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   def index
     @mode = params[:mode] || "all"
 
-    @recipes = Recipe.order(:created_at).page(params[:page])
+    @recipes = Recipe.order(:created_at).page(params[:page]).per(params[:per_page].present? ? params[:per_page] : 5)
 
     if params[:search].present?
       @recipes = @recipes.search(params[:search])
