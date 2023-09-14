@@ -5,7 +5,7 @@
 <%= render partial: "layouts/flash_messages" %>
 
 <% if user_signed_in? %>
-  <div class="d-flex justify-content-center my-4">
+  <div class="d-flex justify-content-center mb-4">
     <div class="btn-group recipes_mode_switcher" role="group">
       <%= link_to "EXPLORE", recipes_path(mode: 'all'), class: "btn #{@mode == 'all' ? "btn-primary" : "btn-outline-primary"}" %>
       <%= link_to "MY RECIPES", recipes_path(mode: 'my'), class: "btn #{@mode == 'my' ? "btn-primary" : "btn-outline-primary"}" %>
@@ -14,7 +14,7 @@
 <% end %>
 
 <%= form_tag request.original_url, class: "row mb-4", method: :get do %>
-  <div class="col-9 col-md-4 col-lg-3">
+  <div class="col-9 col-md-4 col-lg-4">
     <%= text_field_tag 'search', params[:search], placeholder: "Search", class: "form-control" %>
   </div>
 
