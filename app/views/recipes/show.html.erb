@@ -2,18 +2,42 @@
 <%= render partial: "layouts/navbar" %>
 <%= render partial: "layouts/flash_messages" %>
 
-<h1><%= @recipe.title %></h1>
-
-<% if @recipe.image.attached? %>
-  <%= image_tag @recipe.image %>
+<% if @recipe.author == current_user %>
+  <div class="row justify-content-center pb-3">
+    <div class="col-auto">
+      <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary" %>
+    </div>
+    <div class="col-auto">
+      <%= button_to "Delete", @recipe, method: :delete, class: "btn btn-danger" %>
+    </div>
+  </div>
 <% end %>
 
-<p><%= @recipe.description %></p>
 
-<p><%= @recipe.directions %></p>
+<h1 class="text-center pb-3"><%= @recipe.title %></h1>
 
-<% if @recipe.author == current_user %>
-  <%= link_to "Edit", edit_recipe_path(@recipe) %>
+<% if @recipe.image.attached? %>
+  <div class="row pb-3">
+    <div class="col-12">
+      <%= image_tag @recipe.image, class: "img-fluid rounded mx-auto d-block" %>
+    </div>
+  </div>  
+<% end %>
 
-  <%= button_to "Delete", @recipe, method: :delete, class: "btn btn-danger" %>
+<% if @recipe.description.present? %>
+  <div class="row pb-3">
+    <div class="col-12">
+      <h3>Description</h3>
+      <%= @recipe.description %>
+    </div>
+  </div>
+<% end %>
+
+<% if @recipe.directions.present? %>
+  <div class="row pb-3">
+    <div class="col-12">
+      <h3>Directions</h3>
+      <%= @recipe.directions %>
+    </div>
+  </div>
 <% end %>
