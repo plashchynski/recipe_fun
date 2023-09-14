@@ -19,7 +19,7 @@ user.save!
 if Rails.env.production?
   recipes = [
     {
-      title: "Humus",
+      title: "Hummus",
       description: "Hummus, also spelled hommus or houmous, is a dip of Arab origin, spread, or savory dish made from cooked, mashed chickpeas blended with tahini, lemon juice, and garlic. The standard garnish in the Middle East includes olive oil, a few whole chickpeas, parsley, and paprika.",
       author: user
     },

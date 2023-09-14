@@ -1,7 +1,7 @@
-humus_thumbnail_attachment:
+hummus_thumbnail_attachment:
   name: image
-  record: humus (Recipe)
-  blob: humus_thumbnail_blob
+  record: hummus (Recipe)
+  blob: hummus_thumbnail_blob
 
 chicken_thumbnail_attachment:
   name: image

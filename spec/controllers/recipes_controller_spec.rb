@@ -5,7 +5,7 @@ RSpec.describe RecipesController do
   render_views
 
   let(:user) { users(:john) }
-  let(:recipe) { recipes(:humus) }
+  let(:recipe) { recipes(:hummus) }
 
   describe "GET index" do
     it "should render the index template" do
@@ -47,7 +47,7 @@ RSpec.describe RecipesController do
     context "search" do
       it "should search using a term" do
         salad = recipes(:salad)
-        get :index, params: { search: "hummus" }
+        get :index, params: { search: "hummus", per_page: 10 }
         expect(response.body).to include(recipe.title)
         expect(response.body).not_to include(salad.title)
       end
