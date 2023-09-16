@@ -4,11 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :rememberable, :validatable
 
+  # The first and last name of the user are required
   validates :first_name, :last_name, presence: true
 
   # All recipes become anonymous
   has_many :recipes, foreign_key: :author_id, dependent: :destroy
 
+  # The avatar of the user
   has_one_attached :avatar
 
   # A way to remove the avatar is to set remove_avatar to 1

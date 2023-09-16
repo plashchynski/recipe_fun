@@ -1,3 +1,6 @@
+# This is a recipe controller.
+# It is used to manage the recipes.
+
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: %i[ index show ]
@@ -6,16 +9,20 @@ class RecipesController < ApplicationController
   def index
     @mode = params[:mode] || "all"
 
+    # pagination
     @recipes = Recipe.order(:created_at).page(params[:page]).per(params[:per_page].present? ? params[:per_page] : 5)
 
+    # search
     if params[:search].present?
       @recipes = @recipes.search(params[:search])
     end
 
+    # "My recipes" mode
     if @mode == "my" && user_signed_in?
       @recipes = @recipes.where(author_id: current_user.id)
     end
 
+    # author see all recipes, including unpublished
     if user_signed_in?
       # Show all recipes to the author
       @recipes = @recipes.where("published IS TRUE OR author_id = ?", current_user.id).order(created_at: :desc)
