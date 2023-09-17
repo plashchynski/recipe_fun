@@ -19,6 +19,7 @@ RSpec.describe "System", type: :system do
 
   it "should allow a user to create a new recipe" do
     login_as(user)
+    expect(page).to have_content("Signed in successfully.")
     visit new_recipe_path
     fill_in "Title", with: "My new recipe"
     fill_in "Description", with: "My new recipe description"

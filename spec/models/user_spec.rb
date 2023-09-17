@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'associations' do
-    it { should have_many(:recipes) }
+    it { should have_many(:recipes).dependent(:destroy).with_foreign_key(:author_id) }
   end
 
   describe 'attachments' do

@@ -17,6 +17,10 @@ RSpec.describe Recipe, type: :model do
     it { should have_one_attached(:image) }
   end
 
+  describe 'rich text' do
+    it { should have_rich_text(:directions) }
+  end
+
   describe 'scopes' do
     describe '.published' do
       it 'returns only published recipes' do
