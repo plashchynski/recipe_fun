@@ -6,6 +6,23 @@
 - [Ruby on Rails 7](https://rubyonrails.org/)
 - [Postgres 15](https://postgresapp.com/)
 
+## Setup
+
+Run PostgreSQL, then:
+
+```bash
+bundle install
+rails db:create
+rails db:migrate
+rails db:seed
+```
+
+## Run locally
+
+```bash
+rails s
+```
+
 ## Run tests
 
 ```bash
